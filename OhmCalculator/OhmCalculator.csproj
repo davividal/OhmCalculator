@@ -95,6 +95,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Domain\Services\CalculateCurrent.cs" />
+    <Compile Include="Domain\Services\CalculateVoltage.cs" />
+    <Compile Include="Domain\Services\CalculateResistance.cs" />
+    <Compile Include="Domain\Services\OhmLaw.cs" />
+    <Compile Include="Domain\ValueObjects\Current.cs" />
+    <Compile Include="Domain\ValueObjects\Resistance.cs" />
+    <Compile Include="Domain\ValueObjects\SeriesResistor.cs" />
+    <Compile Include="Domain\ValueObjects\Unit.cs" />
+    <Compile Include="Domain\ValueObjects\Voltage.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
