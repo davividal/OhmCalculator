@@ -1,5 +1,6 @@
 ﻿using OhmCalculator.Domain.Services;
 using OhmCalculator.Domain.ValueObjects;
+using OhmCalculator.Domain.ValueObjects.Components;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,6 +28,7 @@ namespace OhmCalculator
         private Int16 VoltageMagnitude;
         private Int16 ResistanceMagnitude;
         private Int16 CurrentMagnitude;
+        private SeriesResistor sr = new SeriesResistor();
 
         public MainPage()
         {
@@ -134,6 +136,17 @@ namespace OhmCalculator
                 r = new Resistance(Resistance.Text, ResistanceMagnitude)
             };
             Current.Text = ohm.GetCurrentByVoltageAndResistance();
+        }
+
+        private void AddSerieResistor_Click(object sender, RoutedEventArgs e)
+        {
+            Resistor r = new Resistor(new Resistance(NewResistor.Text, ResistanceMagnitude), new Voltage(SeriesVoltage.Text, VoltageMagnitude));
+            //sr = sr + r;
+        }
+
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
         }
     }
 }

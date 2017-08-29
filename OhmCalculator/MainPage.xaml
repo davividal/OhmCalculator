@@ -7,24 +7,83 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Grid_Loaded">
-        <TextBlock HorizontalAlignment="Left" Margin="111,100,0,0" TextWrapping="Wrap" Text="Tensão" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="222,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Name="Voltage"/>
-        <TextBlock HorizontalAlignment="Left" Margin="111,200,0,0" TextWrapping="Wrap" Text="Resistência" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="222,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Name="Resistance"/>
-        <TextBlock HorizontalAlignment="Left" Margin="111,300,0,0" TextWrapping="Wrap" Text="Corrente" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="222,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Name="Current"/>
-        <ToggleButton Name="mVToggle" Content="mV" HorizontalAlignment="Left" Margin="340,100,0,0" VerticalAlignment="Top" Click="mVToggle_Click"/>
-        <ToggleButton Name="VToggle" Content="V" HorizontalAlignment="Left" Margin="382,100,0,0" VerticalAlignment="Top" Click="VToggle_Click"/>
-        <ToggleButton Name="kVToggle" Content="kV" HorizontalAlignment="Left" Margin="412,100,0,0" VerticalAlignment="Top" Click="kVToggle_Click"/>
-        <ToggleButton Name="OToggle" Content="Ω" HorizontalAlignment="Left" Margin="340,200,0,0" VerticalAlignment="Top" Click="OToggle_Click"/>
-        <ToggleButton Name="kOToggle" Content="kΩ" HorizontalAlignment="Left" Margin="371,200,0,0" VerticalAlignment="Top" Click="kOToggle_Click"/>
-        <ToggleButton Name="MOToggle" Content="MΩ" HorizontalAlignment="Left" Margin="410,200,0,0" VerticalAlignment="Top" Click="MOToggle_Click"/>
-        <ToggleButton Name="nAToggle" Content="nA" HorizontalAlignment="Left" Margin="340,300,0,0" VerticalAlignment="Top" Click="nAToggle_Click"/>
-        <ToggleButton Name="uAToggle" Content="µA" HorizontalAlignment="Left" Margin="379,300,0,0" VerticalAlignment="Top" Click="uAToggle_Click"/>
-        <ToggleButton Name="mAToggle" Content="mA" HorizontalAlignment="Left" Margin="418,300,0,0" VerticalAlignment="Top" Click="mAToggle_Click"/>
-        <Button Content="Tensão" HorizontalAlignment="Left" Margin="111,381,0,0" VerticalAlignment="Top" Click="CalculateVoltage_Click"/>
-        <Button Content="Resistência" HorizontalAlignment="Left" Margin="222,381,0,0" VerticalAlignment="Top" Click="CalculateResistance_Click"/>
-        <Button Content="Corrente" HorizontalAlignment="Left" Margin="340,381,0,0" VerticalAlignment="Top" Click="CalculateCurrent_Click"/>
-    </Grid>
+    <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay"  IsPaneOpen="False" CompactPaneLength="50" OpenPaneLength="150">
+        <SplitView.Pane>
+
+            <StackPanel Background="Gray">
+
+                <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+
+                    Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click"/>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <Button x:Name="MenuButton1" FontFamily="Segoe MDL2 Assets" Content="&#xE825;"
+
+                    Width="50" Height="50" Background="Transparent"/>
+
+                    <TextBlock Text="Button 1" FontSize="18" VerticalAlignment="Center" />
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <Button x:Name="MenuButton2" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;"
+
+                        Width="50" Height="50" Background="Transparent"/>
+
+                    <TextBlock Text="Button 2" FontSize="18" VerticalAlignment="Center" />
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <Button x:Name="MenuButton3" FontFamily="Segoe MDL2 Assets" Content="&#xE1D6;"
+
+                        Width="50" Height="50" Background="Transparent"/>
+
+                    <TextBlock Text="Button 3" FontSize="18" VerticalAlignment="Center" />
+
+                </StackPanel>
+
+            </StackPanel>
+
+        </SplitView.Pane>
+
+        <SplitView.Content>
+            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Grid_Loaded">
+                <TextBlock HorizontalAlignment="Left" Margin="111,100,0,0" TextWrapping="Wrap" Text="Tensão" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" Margin="222,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Name="Voltage"/>
+                <TextBlock HorizontalAlignment="Left" Margin="111,200,0,0" TextWrapping="Wrap" Text="Resistência" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" Margin="222,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Name="Resistance"/>
+                <TextBlock HorizontalAlignment="Left" Margin="111,300,0,0" TextWrapping="Wrap" Text="Corrente" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" Margin="222,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Name="Current"/>
+                <ToggleButton Name="mVToggle" Content="mV" HorizontalAlignment="Left" Margin="340,100,0,0" VerticalAlignment="Top" Click="mVToggle_Click"/>
+                <ToggleButton Name="VToggle" Content="V" HorizontalAlignment="Left" Margin="382,100,0,0" VerticalAlignment="Top" Click="VToggle_Click"/>
+                <ToggleButton Name="kVToggle" Content="kV" HorizontalAlignment="Left" Margin="412,100,0,0" VerticalAlignment="Top" Click="kVToggle_Click"/>
+                <ToggleButton Name="OToggle" Content="Ω" HorizontalAlignment="Left" Margin="340,200,0,0" VerticalAlignment="Top" Click="OToggle_Click"/>
+                <ToggleButton Name="kOToggle" Content="kΩ" HorizontalAlignment="Left" Margin="371,200,0,0" VerticalAlignment="Top" Click="kOToggle_Click"/>
+                <ToggleButton Name="MOToggle" Content="MΩ" HorizontalAlignment="Left" Margin="410,200,0,0" VerticalAlignment="Top" Click="MOToggle_Click"/>
+                <ToggleButton Name="nAToggle" Content="nA" HorizontalAlignment="Left" Margin="340,300,0,0" VerticalAlignment="Top" Click="nAToggle_Click"/>
+                <ToggleButton Name="uAToggle" Content="µA" HorizontalAlignment="Left" Margin="379,300,0,0" VerticalAlignment="Top" Click="uAToggle_Click"/>
+                <ToggleButton Name="mAToggle" Content="mA" HorizontalAlignment="Left" Margin="418,300,0,0" VerticalAlignment="Top" Click="mAToggle_Click"/>
+                <Button Content="Tensão" HorizontalAlignment="Left" Margin="111,381,0,0" VerticalAlignment="Top" Click="CalculateVoltage_Click"/>
+                <Button Content="Resistência" HorizontalAlignment="Left" Margin="222,381,0,0" VerticalAlignment="Top" Click="CalculateResistance_Click"/>
+                <Button Content="Corrente" HorizontalAlignment="Left" Margin="340,381,0,0" VerticalAlignment="Top" Click="CalculateCurrent_Click"/>
+                <Button Content="Adicionar em Série" HorizontalAlignment="Left" Margin="696,347,0,0" VerticalAlignment="Top" Click="AddSerieResistor_Click"/>
+                <TextBox Name="NewResistor" HorizontalAlignment="Left" Margin="770,249,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+                <TextBlock Name="SeriesR1" HorizontalAlignment="Left" Margin="696,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                <TextBlock Name="SeriesR2" HorizontalAlignment="Left" Margin="696,128,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                <TextBlock Name="SeriesR3" HorizontalAlignment="Left" Margin="696,154,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                <TextBlock Name="SeriesR4" HorizontalAlignment="Left" Margin="696,182,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                <TextBlock Name="SeriesR1_V" HorizontalAlignment="Left" Margin="779,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                <TextBlock Name="SeriesR2_V" HorizontalAlignment="Left" Margin="779,128,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                <TextBlock Name="SeriesR3_V" HorizontalAlignment="Left" Margin="779,154,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                <TextBlock Name="SeriesR4_V" HorizontalAlignment="Left" Margin="779,182,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="696,261,0,0" TextWrapping="Wrap" Text="Resistência" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="696,300,0,0" TextWrapping="Wrap" Text="Tensão" VerticalAlignment="Top"/>
+                <TextBox Name="SeriesVoltage" HorizontalAlignment="Left" Margin="770,288,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+            </Grid>
+        </SplitView.Content>
+    </SplitView>
 </Page>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OhmCalculator.Domain.ValueObjects.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +9,24 @@ namespace OhmCalculator.Domain.ValueObjects
 {
     class SeriesResistor : Unit
     {
-        public Resistance Req { get; set; }
+        public Resistor Req { get; set; }
+        public Voltage v { get; set; }
+        public List<Resistor> Resistors;
 
-        public static SeriesResistor operator +(SeriesResistor s, Resistance r2)
+        public static SeriesResistor operator +(SeriesResistor s, Resistor r2)
         {
-            return new SeriesResistor()
+            Resistance eq = new Resistance(s.Req.r.GetValue() + r2.r.GetValue());
+
+            SeriesResistor sr = new SeriesResistor()
             {
-                Req = new Resistance(s.Req.GetValue() + r2.GetValue())
+                Req = new Resistor(eq, s.v),
+                v = s.v
             };
+
+            sr.Resistors.AddRange(s.Resistors);
+            sr.Resistors.Add(r2);
+
+            return sr;
         }
     }
 }

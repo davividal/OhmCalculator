@@ -99,6 +99,7 @@
     <Compile Include="Domain\Services\CalculateVoltage.cs" />
     <Compile Include="Domain\Services\CalculateResistance.cs" />
     <Compile Include="Domain\Services\OhmLaw.cs" />
+    <Compile Include="Domain\ValueObjects\Components\Resistor.cs" />
     <Compile Include="Domain\ValueObjects\Current.cs" />
     <Compile Include="Domain\ValueObjects\Resistance.cs" />
     <Compile Include="Domain\ValueObjects\SeriesResistor.cs" />
